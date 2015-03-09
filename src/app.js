@@ -219,4 +219,46 @@ angular.module('sdjs', [])
     };
 })
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//---
+
+// A directive that uses ngModel as a requirement
+
+.directive('agDatepicker', function datepicker () {
+    return {
+        scope: {
+            selectType: '@',
+            ngModel: '='
+        },
+        require: 'ngModel'
+    };
+})
 ;

@@ -228,17 +228,49 @@ When we pass true as the scope we create a new scope for our directive but it in
 scope: true
 ```
 
-When we pass an object as the scope we create an isolate scope.
+When we pass an object as the scope we create an "isolate" scope.
 ```javascript
 scope: {
     //...
 }
 ```
 
-By default scope is just passed along and we receive the scope that already exists where we are. `scope: false`
+By default scope is just passed along and we receive the scope that already exists where we are.
 ```javascript
 scope: false
 ```
+
+When you're building re-usable directives you're generally going to use an isolate scope. It provides the most amount of control over how other directives, controllers, etc interface with the directive.
+
+---
+
+Let's use the require attribute of a directive declaration.
+
+__Javascript__
+```javascript
+.directive('agDatepicker', function datepicker () {
+    return {
+        scope: {
+            selectType: '@',
+            ngModel: '='
+        },
+        require: 'ngModel'
+    };
+})
+```
+
+__HTML__
+```html
+<input type="date" ag-datepicker select-type="week" ng-model="event.date"/>
+<br/>
+<h3 ng-if="event.date">Congratulations your event is {{ event.date }}</h3>
+```
+
+[Demo](06-datepicker-directive.html)
+
+---
+
+
 
 ---
 

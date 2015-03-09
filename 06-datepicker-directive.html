@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="sdjs" ng-controller="AppController">
+    <head>
+        <title ng-bind="pageTitle"></title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link type="text/css" rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+
+        <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+        <script type="text/javascript" src="src/app.js"></script>
+        
+        <style type="text/css">
+        </style>
+        
+    </head>
+    <body>
+        <div class="container">
+            <h1>San Diego JS Meetup: Angular Directives</h1>
+            
+            <p>A directive that has a requirement.</p>
+            
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+
+
+            <input type="date" ag-datepicker select-type="week" ng-model="event.date"/>
+            <br/>
+            <h3 ng-if="event.date">Congratulations your event is {{ event.date }}</h3>
+            
+            
+        </div>
+
+    </body>
+</html>
