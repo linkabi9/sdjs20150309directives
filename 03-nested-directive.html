@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="sdjs" ng-controller="AppController">
+    <head>
+        <title ng-bind="pageTitle"></title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link type="text/css" rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+
+        <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+        <script type="text/javascript" src="src/app.js"></script>
+        
+        <style type="text/css">
+        .container > div {
+            font-size: 2em;
+        }
+        div[compile-directive] {
+            padding-left: 1em;
+        }
+        </style>
+        
+    </head>
+    <body>
+        <div class="container">
+            <h1>San Diego JS Meetup: Angular Directives</h1>
+            
+            <p>A directive that is nested has it's compile functions run in a different order than the link functions.</p>
+            
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            
+            
+            <div compile-directive="A">
+                Compile Directive A
+                <div compile-directive="A1">
+                    Compile Directive A1
+                    <div compile-directive="A1alpha">Compile Directive A1alpha</div>
+                    <div compile-directive="A1beta">Compile Directive A1beta</div>
+                    <div compile-directive="A1gamma">Compile Directive A1gamma</div>
+                </div>
+                <div compile-directive="A2">
+                    Compile Directive A2
+                </div>
+                <div compile-directive="A3">
+                    Compile Directive A3
+                    <div compile-directive="A3alpha">Compile Directive A3alpha</div>
+                    <div compile-directive="A3beta">Compile Directive A3beta</div>
+                </div>
+            </div>
+            
+            
+        </div>
+
+    </body>
+</html>
