@@ -270,7 +270,28 @@ __HTML__
 
 ---
 
+# Templates!
 
+__JavaScript__
+```javascript
+.directive('agTemplate', function agTemplate () {
+    return {
+        template: '<h3 ng-if="agHelloUser">Hello {{ agHelloUser }}</h3>',
+        scope: {
+            agHelloUser: '='
+        }
+    };
+})
+```
+
+__HTML__
+```html
+<input type="text" ng-model="user.name"/>
+<br/>
+<div ag-hello-user="user.name"></div>
+```
+
+[Demo](07-hello-directive.html)
 
 ---
 

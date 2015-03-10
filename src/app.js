@@ -2,7 +2,7 @@ angular.module('sdjs', [])
 
 .controller('AppController', function AppController ($scope) {
 
-    $scope.pageTitle = 'San Diego JS Meetup: Simple Directive';
+    $scope.pageTitle = 'San Diego JS Meetup: Angualar Directives';
     
 })
 
@@ -259,6 +259,55 @@ angular.module('sdjs', [])
             ngModel: '='
         },
         require: 'ngModel'
+    };
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//---
+
+// A directive using a template
+
+.directive('agHelloUser', function agTemplate () {
+    return {
+        template: '<h3 ng-if="agHelloUser">Hello {{ agHelloUser }}</h3>',
+        scope: {
+            agHelloUser: '='
+        }
     };
 })
 ;
